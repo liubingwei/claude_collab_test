@@ -1,5 +1,6 @@
-# git_new_features
+# Claude Collab git features
 
+Claude Collab is a multi-person collaboration space where a team discusses and changes a shared git project together with Claude; every change is committed to git automatically.
 
 wenke  1111
 
@@ -43,3 +44,5 @@ On Windows, use `/fprofile-sample-generate` and `/fprofile-sample-use`. Collect 
 - [Intel: Hardware Profile-Guided Optimization (compiler guide)](https://www.intel.com/content/www/us/en/docs/dpcpp-cpp-compiler/developer-guide-reference/2024-2/hardware-profile-guided-optimization.html)
 - [Intel: Hardware-based PGO technical article](https://www.intel.com/content/www/us/en/developer/articles/technical/hwpgo.html)
 - [EuroLLVM 2024: Enabling HW-based PGO](https://llvm.org/devmtg/2024-04/slides/TechnicalTalks/Xiao-EnablingHW-BasedPGO.pdf)
+
+wenke 2222
