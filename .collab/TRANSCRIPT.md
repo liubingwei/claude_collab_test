@@ -27,4 +27,38 @@ _2026-11-26 16:47:23 wenke joined with a share code_
 The project doesn't have a goal yet. What should `git_new_features` be about?
 
 
-_done · $0.105 · 13s_
+_done · changed: README.md · $0.105 · 13s_
+
+
+---
+
+## 2026-11-26 16:48:57 · Bingwei · model default
+
+**[Bingwei]** _2026-11-26 16:48:32_
+
+> Add an introduction about Intel Hardware PGO feature @claude
+
+> 📎 `README.md`
+
+- 🔧 `ToolSearch` 
+- 🔧 `WebSearch` Intel HWPGO hardware profile guided optimization fprofile-sample-generate perf llvm-profgen
+- 🔧 `Bash` `cat >> README.md <<'EOF'`
+**Claude:**
+
+@Bingwei: I added an "Intel Hardware PGO (HWPGO)" section to the end of `README.md`. It covers:
+- **What it is:** a sample-based PGO in the oneAPI compiler since 2024.0. It reads the CPU's hardware performance counters instead of building an instrumented binary.
+- **Why use it:** lower overhead than instrumented PGO, and feedback on branch mispredictions.
+- **Linux workflow in 4 steps:** build with `-fprofile-sample-generate`, collect samples with `perf record -b`, convert them with `llvm-profgen`, then rebuild with `-fprofile-sample-use`.
+- **Windows notes** and **references** to the sources below.
+
+These commands come from Intel's docs and haven't been run here. One thing I didn't confirm: step 4 only feeds in the taken-branch profile. Intel's docs may give a way to pass the misprediction profile too, so check that before relying on it.
+
+Sources:
+- [Intel: Hardware Profile-Guided Optimization](https://www.intel.com/content/www/us/en/docs/dpcpp-cpp-compiler/developer-guide-reference/2024-2/hardware-profile-guided-optimization.html)
+- [Intel: Hardware-based PGO article](https://www.intel.com/content/www/us/en/developer/articles/technical/hwpgo.html)
+- [Intel: fprofile-sample-generate](https://www.intel.com/content/www/us/en/docs/dpcpp-cpp-compiler/developer-guide-reference/2024-2/fprofile-sample-generate.html)
+- [Intel: HWPGO Use Guide for ChromeOS Libraries](https://www.intel.com/content/www/us/en/developer/articles/technical/optimization-guide-for-chromeos-libraries.html)
+- [EuroLLVM 2024 slides](https://llvm.org/devmtg/2024-04/slides/TechnicalTalks/Xiao-EnablingHW-BasedPGO.pdf)
+
+
+_done · $0.302 · 53s_
